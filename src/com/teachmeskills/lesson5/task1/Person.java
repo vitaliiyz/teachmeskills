@@ -48,4 +48,9 @@ public class Person {
         shirt.setColor(color);
         shirt.setPrint(print);
     }
+
+    public void changePants(Size size, String color) {
+        pants.setSize(size);
+        pants.setColor(color);
+    }
 }

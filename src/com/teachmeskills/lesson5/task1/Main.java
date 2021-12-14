@@ -16,6 +16,9 @@ public class Main {
         men.changeShirt(Size.M, "black", "Earth picture");
         men.tellAboutShirt();
 
+        men.changePants(Size.M, "blue");
+        men.tellAboutPants();
+
         System.out.println();
         Person women = new Person("Inna", "Yakubova", new Date(1997, Calendar.AUGUST, 15),
                 58.2, Sex.F, new Shirt(Size.XS, "white", "dog picture"), new Pants(Size.XS, "blue"));
@@ -27,5 +30,8 @@ public class Main {
 
         women.changeShirt(Size.S, "blue", "picture of nature");
         women.tellAboutShirt();
+
+        women.changePants(Size.S, "black");
+        women.tellAboutPants();
     }
 }
