@@ -1,3 +1,5 @@
+package com.teachmeskills.lesson3.tasks;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
