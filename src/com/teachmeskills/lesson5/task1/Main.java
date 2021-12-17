@@ -29,7 +29,7 @@ public class Main {
         woman.tellAboutPants();
 
         woman.changeShirt(Size.S, "blue", "picture of nature");
-        woman.tellAboutShirt();//
+        woman.tellAboutShirt();
 
         woman.changePants(Size.S, "black");
         woman.tellAboutPants();
