@@ -20,18 +20,18 @@ public class Main {
         men.tellAboutPants();
 
         System.out.println();
-        Person women = new Person("Inna", "Yakubova", new Date(1997, Calendar.AUGUST, 15),
+        Person woman = new Person("Inna", "Yakubova", new Date(1997, Calendar.AUGUST, 15),
                 58.2, Sex.F, new Shirt(Size.XS, "white", "dog picture"), new Pants(Size.XS, "blue"));
 
-        women.go();
-        women.sayAge();
-        women.tellAboutShirt();
-        women.tellAboutPants();
+        woman.go();
+        woman.sayAge();
+        woman.tellAboutShirt();
+        woman.tellAboutPants();
 
-        women.changeShirt(Size.S, "blue", "picture of nature");
-        women.tellAboutShirt();
+        woman.changeShirt(Size.S, "blue", "picture of nature");
+        woman.tellAboutShirt();
 
-        women.changePants(Size.S, "black");
-        women.tellAboutPants();
+        woman.changePants(Size.S, "black");
+        woman.tellAboutPants();
     }
 }
