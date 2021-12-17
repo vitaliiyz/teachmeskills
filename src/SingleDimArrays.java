@@ -221,7 +221,7 @@ class SingleDimArrays {
                 index = i;
             }
         }
-        System.out.println("Максимальный элемент массива нахожится под индексом: " + index);
+        System.out.println("Максимальный элемент массива находится под индексом: " + index);
     }
 
     //Задание 8
@@ -309,7 +309,7 @@ class SingleDimArrays {
         int n = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0 && array[i] != 0) {
-                n += 1;
+                n++;
             }
         }
         int[] secondArray = new int[n];

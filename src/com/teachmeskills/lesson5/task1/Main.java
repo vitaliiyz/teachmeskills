@@ -5,19 +5,19 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        Person men = new Person("Vitaly", "Zaitsev", new Date(1998, Calendar.JANUARY, 26),
+        Person man = new Person("Vitaly", "Zaitsev", new Date(1998, Calendar.JANUARY, 26),
                 75.5, Sex.M, new Shirt(Size.S, "blue", "Hello World!"), new Pants(Size.S, "black"));
 
-        men.go();
-        men.sayAge();
-        men.tellAboutShirt();
-        men.tellAboutPants();
+        man.go();
+        man.sayAge();
+        man.tellAboutShirt();
+        man.tellAboutPants();
 
-        men.changeShirt(Size.M, "black", "Earth picture");
-        men.tellAboutShirt();
+        man.changeShirt(Size.M, "black", "Earth picture");
+        man.tellAboutShirt();
 
-        men.changePants(Size.M, "blue");
-        men.tellAboutPants();
+        man.changePants(Size.M, "blue");
+        man.tellAboutPants();
 
         System.out.println();
         Person woman = new Person("Inna", "Yakubova", new Date(1997, Calendar.AUGUST, 15),
