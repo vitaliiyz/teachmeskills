@@ -28,8 +28,8 @@ public class Main {
         woman.tellAboutShirt();
         woman.tellAboutPants();
 
-        woman.changeShirt(Size.S, "blue", "picture of nature");
-        woman.tellAboutShirt();
+//        woman.changeShirt(Size.S, "blue", "picture of nature");
+//        woman.tellAboutShirt();//
 
         woman.changePants(Size.S, "black");
         woman.tellAboutPants();
