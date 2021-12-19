@@ -1,11 +1,20 @@
 package com.teachmeskills.lesson6.task1;
 
-public class Truck extends GroundTransport{
+public class Truck extends GroundTransport implements TransportMethods{
 
-    private double loadCapacity;
+    private int loadCapacity;
 
-    public Truck(int power, int speed, double weight, String brand, int wheelsNumber, int fuelConsumption, double loadCapacity) {
-        super(power, speed, weight, brand, wheelsNumber, fuelConsumption);
+    Truck(int power, int maxSpeed, int weight, String brand, int wheelsNumber, double fuelConsumption, int loadCapacity) {
+        super(power, maxSpeed, weight, brand, wheelsNumber, fuelConsumption);
         this.loadCapacity = loadCapacity;
     }
+
+    @Override
+    public void describeTransport() {
+        System.out.println("Грузовой автомобиль имеет: " + "мощность (л.с.) " + power + ", максимальную скорость (км/ч) " +
+                maxSpeed + ", вес (кг) " + weight + ", марку " + brand + ", количетво колес " + wheelsNumber +
+                ", расход топлива (л/100км) " + fuelConsumption + ", грузоподъемность (кг) " + loadCapacity +
+                ", мощность в киловаттах: " + calculatePowerInKilowatts(power) + ".");
+    }
+
 }

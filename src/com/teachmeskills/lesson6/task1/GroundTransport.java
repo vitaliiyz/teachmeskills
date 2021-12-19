@@ -3,10 +3,10 @@ package com.teachmeskills.lesson6.task1;
 public abstract class GroundTransport extends Transport{
 
     protected int wheelsNumber;
-    protected int fuelConsumption;
+    protected double fuelConsumption;
 
-    public GroundTransport(int power, int speed, double weight, String brand, int wheelsNumber, int fuelConsumption) {
-        super(power, speed, weight, brand);
+    GroundTransport(int power, int maxSpeed, int weight, String brand, int wheelsNumber, double fuelConsumption) {
+        super(power, maxSpeed, weight, brand);
         this.wheelsNumber = wheelsNumber;
         this.fuelConsumption = fuelConsumption;
     }
