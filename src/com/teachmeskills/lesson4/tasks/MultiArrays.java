@@ -11,8 +11,8 @@ public class MultiArrays {
 
     public static void main(String[] args) {
 
-//        int[][] matrix = createMatrix(random, scanner);
-//        printMatrix(matrix);
+        int[][] matrix = createMatrix(random, scanner);
+        printMatrix(matrix);
 
         //Задание 1
 //        printMainDiagonalEvenElementsAmount(matrix);
@@ -21,12 +21,12 @@ public class MultiArrays {
 //        printOddElementsUnderMainDiagonal(matrix);
 
         //Задание 3
-//        compareTwoDiagonalsProducts(matrix);
+        compareTwoDiagonalsProducts(matrix);
 
         //Крестики-нолики
-        String[][] gameField = createGameField();
-        printGameField(gameField);
-        playGame(scanner, gameField);
+//        String[][] gameField = createGameField();
+//        printGameField(gameField);
+//        playGame(scanner, gameField);
 
     }
 
@@ -57,38 +57,40 @@ public class MultiArrays {
     }
 
     //Задание 1
-    public static void printMainDiagonalEvenElementsAmount(int[][] matrix) {
-        int amount = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (j == i && matrix[i][j] % 2 == 0 && matrix[i][j] != 0) {
-                    amount += matrix[i][j];
-                }
-            }
-        }
-        if (amount == 0) {
-            System.out.println("На главной диагонали нет четных чисел.");
-        } else {
-            System.out.println("Сумма четных элементов на главной диагонали равна: " + amount);
-        }
-    }
+//    public static void printMainDiagonalEvenElementsAmount(int[][] matrix) {
+//        int amount = 0;
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                if (j == i && matrix[i][j] % 2 == 0 && matrix[i][j] != 0) {
+//                    amount += matrix[i][j];
+//                }
+//            }
+//        }
+//        if (amount == 0) {
+//            System.out.println("На главной диагонали нет четных чисел.");
+//        } else {
+//            System.out.println("Сумма четных элементов на главной диагонали равна: " + amount);
+//        }
+//    }
 
     //Задание 2
-    public static void printOddElementsUnderMainDiagonal(int[][] matrix) {
-        System.out.println("Нечетные элементы под главной диагональю матрицы (включительно):");
-        boolean check = false;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (j <= i && matrix[i][j] % 2 != 0 && matrix[i][j] != 0){
-                    System.out.print(matrix[i][j] + " ");
-                    check = true;
-                }
-            }
-        }
-        if (!check) {
-            System.out.println("Нечетные элементы под главной диагональю матрицы (включительно) отсутствуют.");
-        }
-    }
+//    public static void printOddElementsUnderMainDiagonal(int[][] matrix) {
+//        System.out.println("Нечетные элементы под главной диагональю матрицы (включительно):");
+//        boolean check = false;
+//        for (int i = 0; i < matrix.length; i++) {
+//            int j = 0;
+//            while (j <= i) {
+//                if (matrix[i][j] % 2 != 0 && matrix[i][j] != 0){
+//                    System.out.print(matrix[i][j] + " ");
+//                    check = true;
+//                }
+//                j++;
+//            }
+//        }
+//        if (!check) {
+//            System.out.println("Нечетные элементы под главной диагональю матрицы (включительно) отсутствуют.");
+//        }
+//    }
 
     //Задание 3
     public static void compareTwoDiagonalsProducts(int[][] matrix) {
