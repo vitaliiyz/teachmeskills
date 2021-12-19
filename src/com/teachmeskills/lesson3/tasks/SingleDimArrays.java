@@ -30,6 +30,7 @@ class SingleDimArrays {
         //Задание 2
 //        int[] array2 = oddNumbers;
 //        System.out.println(Arrays.toString(addOddNumbers(oddNumbers)));
+//        reverseSorting(array2);
 //        System.out.println(Arrays.toString(bubbleSortDesc(array2)));
 
         //Задание 3
@@ -61,8 +62,7 @@ class SingleDimArrays {
         //Задание 7
 //        int[] array7 = createRandomArray(randomArr7, 15);
 //        System.out.println(Arrays.toString(array7));
-//        System.out.println("Максимальный элемент массива: " + findMaxNumber(array7));
-//        findMaxNumberLastIndex(array7);
+//        findMaxNumberIndex(array7);
 
         //Задание 8
 //        int[] array81 = createRandomArray(randomArr81, 9);
@@ -79,14 +79,14 @@ class SingleDimArrays {
 //        compareTwoArraysSides(array9);
 
         //Задание 10
-//        int[] firstArray = createFirstArray(scanner, random);
-//        System.out.println("Первый массив:\n" + Arrays.toString(firstArray));
-//        int[] secondArray = createSecondArray(firstArray);
-//        if (secondArray.length == 0) {
-//            System.out.println("Второй массив пустой, т.к. в первом массиве нет четных чисел.");
-//        } else {
-//            System.out.println("Второй массив:\n" + Arrays.toString(secondArray));
-//        }
+        int[] firstArray = createFirstArray(scanner, random);
+        System.out.println("Первый массив:\n" + Arrays.toString(firstArray));
+        int[] secondArray = createSecondArray(firstArray);
+        if (secondArray.length == 0) {
+            System.out.println("Второй массив пустой, т.к. в первом массиве нет четных чисел.");
+        } else {
+            System.out.println("Второй массив:\n" + Arrays.toString(secondArray));
+        }
 
     }
 
@@ -108,33 +108,36 @@ class SingleDimArrays {
 
     // Задание 2
     public static int[] addOddNumbers(int[] array) {
-        int num = 0;
+        int num = 1;
         for (int i = 0; i < array.length; i++) {
-           if (num % 2 == 0){
-               num += 1;
-           }
            array[i] = num;
-           num += 1;
+            num += 2;
         }
         return array;
     }
 
-    public static int[] bubbleSortDesc(int[] array) {
-        boolean sorted = false;
-        int temp;
-        while (!sorted){
-            sorted = true;
-            for (int i = 0; i < array.length - 1; i++) {
-                if(array[i] < array[i+1]){
-                    temp = array[i];
-                    array[i] = array[i+1];
-                    array[i+1] = temp;
-                    sorted = false;
-                }
-            }
+    public static void reverseSorting(int[] array) {
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.print(array[i] + ", ");
         }
-        return array;
     }
+
+//    public static int[] bubbleSortDesc(int[] array) {
+//        boolean sorted = false;
+//        int temp;
+//        while (!sorted){
+//            sorted = true;
+//            for (int i = 0; i < array.length - 1; i++) {
+//                if(array[i] < array[i+1]){
+//                    temp = array[i];
+//                    array[i] = array[i+1];
+//                    array[i+1] = temp;
+//                    sorted = false;
+//                }
+//            }
+//        }
+//        return array;
+//    }
 
     //Задание 3
     public static int[] createRandomArray(int[] array, int randomBound){
@@ -204,22 +207,17 @@ class SingleDimArrays {
     }
 
     //Задание 7
-    public static int findMaxNumber(int[] array){
+    public static void findMaxNumberIndex(int[] array){
         int maxNum = 0;
+        int index = -1;
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] < array[i + 1] && maxNum < array[i + 1]) {
                 maxNum = array[i + 1];
+                index = i + 1;
             } else if (maxNum < array[i]){ // Для нулевого индекса
                 maxNum = array[i];
-            }
-        }
-        return maxNum;
-    }
-
-    public static void findMaxNumberLastIndex(int[] array) {
-        int index = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == findMaxNumber(array)){
+                index = i;
+            } else if (maxNum == array[i]) {
                 index = i;
             }
         }
@@ -229,7 +227,11 @@ class SingleDimArrays {
     //Задание 8
     public static double[] createThirdArray(int[] array1,int[] array2, double[] array3) {
         for (int i = 0; i < array1.length; i++) {
-            array3[i] = (double) array1[i] / (double) array2[i];
+            if (array2[i] == 0) {
+                array3[i] = 1;
+            } else {
+                array3[i] = (double) array1[i] / (double) array2[i];
+            }
         }
         return array3;
     }
