@@ -21,4 +21,20 @@ public class MilitaryAirTransport extends AirTransport implements TransportMetho
                 ", мощность в киловаттах: " + calculatePowerInKilowatts(power) + ".");
     }
 
+    public void fireByMissile() {
+        if (missilesNumber == 0) {
+            System.out.println("Боеприпасы отсутствуют");
+        } else {
+            System.out.println("Ракета пошла...");
+            missilesNumber--;
+        }
+    }
+
+    public void eject() {
+        if (isThereEjectionSystems) {
+            System.out.println("Катапультрование прошло успешно");
+        } else {
+            System.out.println("У вас нет такой системы");
+        }
+    }
 }

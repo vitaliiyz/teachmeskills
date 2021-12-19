@@ -20,14 +20,16 @@ public class PassengerTransport extends GroundTransport implements TransportMeth
                 ", мощность в киловаттах: " + calculatePowerInKilowatts(power) + ".");
     }
 
-    public int calculateDistanceForTimeWithMaxSpeed(double hours) {
+    public void printDistanceAndFuelForTimeWithMaxSpeed(double hours) {
+        double distance = maxSpeed * hours;
 
+        System.out.println("За время " + hours + " ч, автомобиль " + brand + " двигаясь с максимальной скоростью " +
+                maxSpeed + " км/ч проедет " + distance + " км и израсходует " + calculateFuel(distance) + " литров топлива.");
     }
 
-    private double calculateFuelForTimeWithMaxSpeed(double hours) {
-        double fuelQty = (hours * maxSpeed)
+    private double calculateFuel(double distance) {
+        return distance / 100 * fuelConsumption;
     }
-
 
 
 }

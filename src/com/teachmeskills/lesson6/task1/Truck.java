@@ -17,4 +17,12 @@ public class Truck extends GroundTransport implements TransportMethods{
                 ", мощность в киловаттах: " + calculatePowerInKilowatts(power) + ".");
     }
 
+    @Override
+    public void checkCapacity(int loadingAmount, int capacity, String transportType) {
+        TransportMethods.super.checkCapacity(loadingAmount, capacity, transportType);
+    }
+
+    public int getLoadCapacity() {
+        return loadCapacity;
+    }
 }
