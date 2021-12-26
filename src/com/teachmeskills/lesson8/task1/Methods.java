@@ -42,10 +42,10 @@ public class Methods<isPalindrome> {
 
     public boolean findPalindrome(String string) {
         boolean isPalindrome = false;
-        string.replace(".", "");
+        int n = string.length();
 
-        for (int i = 0; i < string.length() / 2; i++) {
-            if (Character.toLowerCase(string.charAt(i)) == Character.toLowerCase(string.charAt(string.length() - i - 1))) {
+        for (int i = 0; i < n / 2; i++) {
+            if (Character.toLowerCase(string.charAt(i)) == Character.toLowerCase(string.charAt(n - i - 1))) {
                 isPalindrome = true;
             } else {
                 isPalindrome = false;
@@ -57,18 +57,19 @@ public class Methods<isPalindrome> {
 
     //4 task
     public void getSentencesWithThreeFiveWords() {
-        String[] sentences = string.split("\\. ");
+        String sentence = string.replaceAll("\\. ", ".");
+        String[] sentences = sentence.split("\\.");
         System.out.println("Предложение с 3 - 5 словами и/или палиндромами:");
 
-        for (String sentence : sentences) {
-            String[] wordsInSentence = sentence.split(" ");
+        for (String oneSentence : sentences) {
+            String[] wordsInSentence = oneSentence.split(" ");
 
             if (wordsInSentence.length >= 3 && wordsInSentence.length <= 5) {
-                System.out.println(sentence);
+                System.out.println(oneSentence);
             } else {
                 for (String word : wordsInSentence) {
                     if (findPalindrome(word)) {
-                        System.out.println(sentence);
+                        System.out.println(oneSentence);
                     }
                 }
             }
