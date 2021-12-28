@@ -1,36 +1,32 @@
 package com.teachmeskills.lesson8.task1;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.Arrays;
-
 public class Methods<isPalindrome> {
-    private String string;
+    private String text;
 
-    public Methods(String string) {
-        this.string = string;
+    public Methods(String text) {
+        this.text = text;
     }
 
-    public String getString() {
-        return string;
+    public String getText() {
+        return text;
     }
 
     //1 task
     public String cutFromString(int from, int to) {
-        return string.substring(from, to);
+        return text.substring(from, to);
     }
 
     //2 task
     public String replaceCharacter() {
-        char[] arrayString = string.toCharArray();
+        char[] arrayString = text.toCharArray();
         char oldChar = arrayString[3];
         char newChar = arrayString[0];
-        return string.replace(oldChar, newChar);
+        return text.replace(oldChar, newChar);
     }
 
     //3 task
     public void printSplitString() {
-        String[] wordsInSentence = string.split(" ");
+        String[] wordsInSentence = text.split(" ");
         System.out.println("Слова палиндромы:");
 
         for (String word : wordsInSentence) {
@@ -57,7 +53,7 @@ public class Methods<isPalindrome> {
 
     //4 task
     public void getSentencesWithThreeFiveWords() {
-        String sentence = string.replaceAll("\\. ", ".");
+        String sentence = text.replaceAll("\\. ", ".");
         String[] sentences = sentence.split("\\.");
         System.out.println("Предложение с 3 - 5 словами и/или палиндромами:");
 

@@ -15,7 +15,12 @@ public class Main {
         string2.printSplitString();
         System.out.println();
 
-        System.out.println(string3.getString());
+        System.out.println(string3.getText());
         string3.getSentencesWithThreeFiveWords();
+        System.out.println();
+
+        System.out.println("Количество слов в строке '" + string2.getText() + "': " + TextFormatterUtils.findWordsNumber(string2.getText()));
+        System.out.println("Есть ли в строке '" + string.getText() + "' слово-палиндром: " + TextFormatterUtils.isTherePalindrome(string.getText()));
+
     }
 }
