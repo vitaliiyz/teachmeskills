@@ -60,9 +60,9 @@ class SingleDimArrays {
 //        identifyIncreasing(array6);
 
         //Задание 7
-//        int[] array7 = createRandomArray(randomArr7, 15);
-//        System.out.println(Arrays.toString(array7));
-//        findMaxNumberIndex(array7);
+        int[] array7 = createRandomArray(randomArr7, 15);
+        System.out.println(Arrays.toString(array7));
+        findMaxNumberIndex(array7);
 
         //Задание 8
 //        int[] array81 = createRandomArray(randomArr81, 9);
@@ -79,14 +79,14 @@ class SingleDimArrays {
 //        compareTwoArraysSides(array9);
 
         //Задание 10
-        int[] firstArray = createFirstArray(scanner, random);
-        System.out.println("Первый массив:\n" + Arrays.toString(firstArray));
-        int[] secondArray = createSecondArray(firstArray);
-        if (secondArray.length == 0) {
-            System.out.println("Второй массив пустой, т.к. в первом массиве нет четных чисел.");
-        } else {
-            System.out.println("Второй массив:\n" + Arrays.toString(secondArray));
-        }
+//        int[] firstArray = createFirstArray(scanner, random);
+//        System.out.println("Первый массив:\n" + Arrays.toString(firstArray));
+//        int[] secondArray = createSecondArray(firstArray);
+//        if (secondArray.length == 0) {
+//            System.out.println("Второй массив пустой, т.к. в первом массиве нет четных чисел.");
+//        } else {
+//            System.out.println("Второй массив:\n" + Arrays.toString(secondArray));
+//        }
 
     }
 
@@ -208,16 +208,9 @@ class SingleDimArrays {
 
     //Задание 7
     public static void findMaxNumberIndex(int[] array){
-        int maxNum = 0;
-        int index = -1;
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] < array[i + 1] && maxNum < array[i + 1]) {
-                maxNum = array[i + 1];
-                index = i + 1;
-            } else if (maxNum < array[i]){ // Для нулевого индекса
-                maxNum = array[i];
-                index = i;
-            } else if (maxNum == array[i]) {
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[index] <= array[i]) {
                 index = i;
             }
         }
