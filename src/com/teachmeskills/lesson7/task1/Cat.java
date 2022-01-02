@@ -8,4 +8,21 @@ public class Cat extends Animal{
         super(food, location);
         this.catColor = catColor;
     }
+
+
+    @Override
+    public void makeNoise() {
+        System.out.println("Кот мяукает.");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Кот кушает. У него в миске " + food + ".");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Кот спит.");
+    }
+
 }

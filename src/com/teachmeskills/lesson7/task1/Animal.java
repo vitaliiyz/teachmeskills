@@ -9,16 +9,10 @@ public abstract class Animal {
         this.location = location;
     }
 
-    public void makeNoise() {
+    public abstract void makeNoise();
 
-    }
+    public abstract void eat();
 
-    public void eat() {
-
-    }
-
-    public void sleep(Animal animal) {
-        System.out.println(animal + " спит.");
-    }
+    public abstract void sleep();
 
 }

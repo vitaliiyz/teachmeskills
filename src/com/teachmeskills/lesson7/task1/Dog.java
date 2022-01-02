@@ -9,13 +9,19 @@ public class Dog extends Animal{
         this.dogType = dogType;
     }
 
+
     @Override
     public void makeNoise() {
-        super.makeNoise();
+        System.out.println("Собака гавкает.");
     }
 
     @Override
     public void eat() {
-        super.eat();
+        System.out.println("Собака кушает. У неё в миске " + food + ".");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Собака спит.");
     }
 }
