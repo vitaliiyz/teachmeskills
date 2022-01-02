@@ -11,8 +11,8 @@ public class MultiArrays {
 
     public static void main(String[] args) {
 
-        int[][] matrix = createMatrix(random, scanner);
-        printMatrix(matrix);
+//        int[][] matrix = createMatrix(random, scanner);
+//        printMatrix(matrix);
 
         //Задание 1
 //        printMainDiagonalEvenElementsAmount(matrix);
@@ -21,40 +21,40 @@ public class MultiArrays {
 //        printOddElementsUnderMainDiagonal(matrix);
 
         //Задание 3
-        compareTwoDiagonalsProducts(matrix);
+//        compareTwoDiagonalsProducts(matrix);
 
         //Крестики-нолики
-//        String[][] gameField = createGameField();
-//        printGameField(gameField);
-//        playGame(scanner, gameField);
+        String[][] gameField = createGameField();
+        printGameField(gameField);
+        playGame(gameField);
 
     }
 
-    public static int[][] createMatrix(Random random, Scanner scanner) {
-        System.out.println("Введите размерность квадратной матрицы:");
-        int x = scanner.nextInt();
-        while (x <= 0){
-            System.out.println("Размерность квадратной матрицы должна быть целым положительным числом! Введите размерность квадратной матрицы:");
-            x = scanner.nextInt();
-        }
-        int [][] matrix = new int[x][x];
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = random.nextInt(50);
-            }
-        }
-        return matrix;
-    }
-
-    public static void printMatrix(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
+//    public static int[][] createMatrix(Random random, Scanner scanner) {
+//        System.out.println("Введите размерность квадратной матрицы:");
+//        int x = scanner.nextInt();
+//        while (x <= 0){
+//            System.out.println("Размерность квадратной матрицы должна быть целым положительным числом! Введите размерность квадратной матрицы:");
+//            x = scanner.nextInt();
+//        }
+//        int [][] matrix = new int[x][x];
+//
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                matrix[i][j] = random.nextInt(50);
+//            }
+//        }
+//        return matrix;
+//    }
+//
+//    public static void printMatrix(int[][] matrix) {
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                System.out.print(matrix[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
 
     //Задание 1
 //    public static void printMainDiagonalEvenElementsAmount(int[][] matrix) {
@@ -93,116 +93,109 @@ public class MultiArrays {
 //    }
 
     //Задание 3
-    public static void compareTwoDiagonalsProducts(int[][] matrix) {
-        int mainDiagonalProduct = 1;
-        int sideDiagonalProduct = 1;
-
-        for (int i = 0; i < matrix.length; i++) {
-            mainDiagonalProduct *= matrix[i][i];
-        }
-
-        for (int i = 0; i < matrix.length; i++) {
-            sideDiagonalProduct *= matrix[i][(matrix.length - 1) - i];
-        }
-
-        if (mainDiagonalProduct > sideDiagonalProduct) {
-            System.out.println("Произведение элементов главной диагонали " + mainDiagonalProduct + " больше произведения элементов побочной диагонали " + sideDiagonalProduct);
-        } else if (sideDiagonalProduct > mainDiagonalProduct) {
-            System.out.println("Произведение элементов побочной диагонали " + sideDiagonalProduct + " больше произведения элементов главной диагонали " + mainDiagonalProduct);
-        } else {
-            System.out.println("Произведение элементов обеих диагоналей равны: " + mainDiagonalProduct + " и " + sideDiagonalProduct);
-        }
-    }
+//    public static void compareTwoDiagonalsProducts(int[][] matrix) {
+//        int mainDiagonalProduct = 1;
+//        int sideDiagonalProduct = 1;
+//
+//        for (int i = 0; i < matrix.length; i++) {
+//            mainDiagonalProduct *= matrix[i][i];
+//        }
+//
+//        for (int i = 0; i < matrix.length; i++) {
+//            sideDiagonalProduct *= matrix[i][(matrix.length - 1) - i];
+//        }
+//
+//        if (mainDiagonalProduct > sideDiagonalProduct) {
+//            System.out.println("Произведение элементов главной диагонали " + mainDiagonalProduct + " больше произведения элементов побочной диагонали " + sideDiagonalProduct);
+//        } else if (sideDiagonalProduct > mainDiagonalProduct) {
+//            System.out.println("Произведение элементов побочной диагонали " + sideDiagonalProduct + " больше произведения элементов главной диагонали " + mainDiagonalProduct);
+//        } else {
+//            System.out.println("Произведение элементов обеих диагоналей равны: " + mainDiagonalProduct + " и " + sideDiagonalProduct);
+//        }
+//    }
 
     //Крестики-нолики
-    public static void playGame(Scanner scanner, String[][] gameField) {
-        int x;
-        int y;
+    public static void playGame(String[][] gameField) {
         String cross = " X ";
         String zero = " 0 ";
         int n = 1;
+        int playerNumber = 0;
 
         for (int i = 0; i < gameField.length; i++) {
             for (int j = 0; j < gameField[i].length; j++) {
                 if (n % 2 != 0) {
-                    System.out.println("Игрок 1, введите координаты крестика (от 1 до 3):");
-                    System.out.println("по горизонтали:");
-                    x = scanner.nextInt();
-
-                    while (x <= 0 || x > 3) {
-                        System.out.println("Значение должно быть от 1 до 3!");
-                        System.out.println("Игрок 1, введите координаты крестика (от 1 до 3):");
-                        System.out.println("по горизонтали:");
-                        x = scanner.nextInt();
-                    }
-
-                    System.out.println("по вертикали:");
-                    y = scanner.nextInt();
-
-                    while (y <= 0 || y > 3) {
-                        System.out.println("Значение должно быть от 1 до 3!");
-                        System.out.println("Игрок 1, введите координаты крестика (от 1 до 3):");
-                        System.out.println("по вертикали:");
-                        y = scanner.nextInt();
-                    }
-
-                    while (gameField[x - 1][y - 1] == cross || gameField[x - 1][y - 1] == zero){
-                        System.out.println("По этим координатам уже есть крестик или нолик, попробуйте снова!");
-                        printGameField(gameField);
-                        System.out.println("Игрок 1, введите координаты крестика (от 1 до 3):");
-                        System.out.println("по горизонтали:");
-                        x = scanner.nextInt();
-                        System.out.println("по вертикали:");
-                        y = scanner.nextInt();
-                    }
-                    gameField[x - 1][y - 1] = cross;
-
-
-                    System.out.println("Игровое поле:\n");
-                    printGameField(gameField);
-                    n++;
-                } else if (n % 2 == 0) {
-                    System.out.println("Игрок 2, введите координаты нолика (от 1 до 3):");
-                    System.out.println("по горизонтали:");
-                    x = scanner.nextInt();
-
-                    while (x <= 0 || x > 3) {
-                        System.out.println("Значение должно быть от 1 до 3!");
-                        System.out.println("Игрок 2, введите координаты крестика (от 1 до 3):");
-                        System.out.println("по горизонтали:");
-                        x = scanner.nextInt();
-                    }
-
-                    System.out.println("по вертикали:");
-                    y = scanner.nextInt();
-
-                    while (y <= 0 || y > 3) {
-                        System.out.println("Значение должно быть от 1 до 3!");
-                        System.out.println("Игрок 1, введите координаты крестика (от 1 до 3):");
-                        System.out.println("по вертикали:");
-                        y = scanner.nextInt();
-                    }
-
-                    while (gameField[x - 1][y - 1] == cross || gameField[x - 1][y - 1] == zero) {
-                        System.out.println("По этим координатам уже есть крестик или нолик, попробуйте снова!");
-                        printGameField(gameField);
-                        System.out.println("Игрок 2, введите координаты нолика (от 1 до 3):");
-                        System.out.println("по горизонтали:");
-                        x = scanner.nextInt();
-                        System.out.println("по вертикали:");
-                        y = scanner.nextInt();
-                    }
-                    gameField[x - 1][y - 1] = zero;
-
-                    System.out.println("Игровое поле:\n" );
-                    printGameField(gameField);
-                    n++;
+                    playerNumber = 1;
+                } else {
+                    playerNumber = 2;
                 }
+
+                makeStep(gameField, playerNumber);
+
+                System.out.println("Игровое поле:\n");
+                printGameField(gameField);
+                n++;
+
                 if (checkWinner(gameField, cross, zero)) {
                     return;
                 }
             }
         }
+    }
+
+    public static String makeStep(String[][] gameField, int playerNumber) {
+        String cross = " X ";
+        String zero = " 0 ";
+        String value;
+
+        if (playerNumber == 1) {
+            value = "крестика";
+        } else {
+            value = "нолика";
+        }
+
+        int x = enterX(scanner, playerNumber, value);
+
+        while (x <= 0 || x > 3) {
+            System.out.println("Значение должно быть от 1 до 3!");
+            x = enterX(scanner, playerNumber, value);
+        }
+
+        int y = enterY(playerNumber, value);
+
+        while (y <= 0 || y > 3) {
+            System.out.println("Значение должно быть от 1 до 3!");
+            y = enterY(playerNumber, value);
+        }
+
+        while (gameField[x - 1][y - 1] == cross || gameField[x - 1][y - 1] == zero) {
+            System.out.println("По этим координатам уже есть крестик или нолик, попробуйте снова!");
+            printGameField(gameField);
+            x = enterX(scanner, playerNumber, value);
+            y = enterY(playerNumber, value);
+        }
+
+        if (playerNumber == 1) {
+            return gameField[x - 1][y - 1] = cross;
+        } else {
+            return gameField[x - 1][y - 1] = zero;
+        }
+
+    }
+
+    public static int enterX(Scanner scanner, int playerNumber, String value) {
+        String inputText = "Игрок " + playerNumber + ", введите координаты " + value + " (от 1 до 3):";
+        String horizontal = "по горизонтали:";
+        System.out.println(inputText);
+        System.out.println(horizontal);
+        return scanner.nextInt();
+    }
+
+    public static int enterY(int playerNumber, String value) {
+        String inputText = "Игрок " + playerNumber + ", введите координаты " + value + " (от 1 до 3):";
+        String vertical = "по вертикали:";
+        System.out.println(inputText);
+        System.out.println(vertical);
+        return scanner.nextInt();
     }
 
     public static String[][] createGameField() {
@@ -240,7 +233,7 @@ public class MultiArrays {
                 System.out.println("Игрок 1 победил!");
                 isOver = true;
                 break;
-            } else  if (zeroQty == 3) {
+            } else if (zeroQty == 3) {
                 System.out.println("Игрок 2 победил!");
                 isOver = true;
                 break;
@@ -262,7 +255,7 @@ public class MultiArrays {
                 System.out.println("Игрок 1 победил!");
                 isOver = true;
                 break;
-            } else  if (zeroQty == 3) {
+            } else if (zeroQty == 3) {
                 System.out.println("Игрок 2 победил!");
                 isOver = true;
                 break;
