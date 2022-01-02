@@ -21,11 +21,6 @@ public class CivilAirTransport extends AirTransport implements TransportMethods{
                 ", мощность в киловаттах: " + calculatePowerInKilowatts(power) + ".");
     }
 
-    @Override
-    public void checkCapacity(int loadingAmount, int capacity, String transportType) {
-        TransportMethods.super.checkCapacity(loadingAmount, capacity, transportType);
-    }
-
     public int getPassengerNumber() {
         return passengerNumber;
     }
