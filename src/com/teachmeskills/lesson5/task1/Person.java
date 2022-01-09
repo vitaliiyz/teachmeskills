@@ -43,14 +43,11 @@ public class Person {
         System.out.println("I have " + pants.color + " pants. It has " + pants.size + " size.");
     }
 
-    public void changeShirt(Size size, String color, String print) {
-        shirt.setSize(size);
-        shirt.setColor(color);
-        shirt.setPrint(print);
+    public Shirt changeShirt(Size size, String color, String print) {
+        return shirt = new Shirt(size, color, print);
     }
 
-    public void changePants(Size size, String color) {
-        pants.setSize(size);
-        pants.setColor(color);
+    public Pants changePants(Size size, String color) {
+        return pants = new Pants(size, color);
     }
 }
